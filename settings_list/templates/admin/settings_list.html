@@ -1,0 +1,34 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url admin:index %}">{% trans 'Home' %}</a> &rsaquo;
+    {% trans 'Django Settings' %}
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+<div class="module">
+
+    <table id="settings-list">
+        <thead>
+        <tr>
+            <th scope="col">{% trans 'Name' %}</th>
+            <th scope="col">{% trans 'Value' %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for key, value in settings.items %}
+        <tr>
+            <th scope="row">{{ key }}</th>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+</div>
+{% endblock %}
