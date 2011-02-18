@@ -20,10 +20,10 @@
         </tr>
         </thead>
         <tbody>
-        {% for key, value in settings.items %}
+        {% for setting in sorted_settings %}
         <tr>
-            <th scope="row">{{ key }}</th>
-            <td>{{ value }}</td>
+            <th scope="row">{{ setting.0 }}</th>
+            <td>{{ setting.1 }}</td>
         </tr>
         {% endfor %}
         </tbody>

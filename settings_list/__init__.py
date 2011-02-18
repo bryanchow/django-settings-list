@@ -20,6 +20,9 @@ def settings_list(request):
         if setting in settings:
             settings[setting] = '********************'
 
+    sorted_settings = sorted(settings.items())
+
     return render_to_response('admin/settings_list.html', RequestContext(request, {
-        'settings': settings,
+        'title': 'Django Settings',
+        'sorted_settings': sorted_settings,
     }))
